@@ -8,7 +8,7 @@ export const Home = () => {
   const { openMenu } = useMenu();
 
   useEffect(() => {
-    // Any effects you need
+    window.scrollTo(0, 0);
   }, []);
 
   return (

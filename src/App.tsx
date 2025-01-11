@@ -10,12 +10,12 @@ import { Menu } from './components/Menu';
 import './App.css';
 import backgroundImage from './assets/background.jpg';
 import { MenuProvider } from './context/MenuContext';
-import { projectsData, Project } from './data/projects';
+import { projectsData } from './data/projects';
 
 // Separate component to handle location-based effects
 function AppContent() {
   const location = useLocation();
-  const [currentBackground, setCurrentBackground] = useState(backgroundImage);
+  const [currentBackground, setCurrentBackground] = useState<string>(backgroundImage);
 
   useEffect(() => {
     const background = document.querySelector('.background') as HTMLElement;

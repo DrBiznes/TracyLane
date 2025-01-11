@@ -2,19 +2,13 @@
   min-height: 100vh;
   background-color: var(--color-bg);
   padding: 6rem 2rem 4rem;
+  position: relative;
 }
 
 .interests-content {
   max-width: 1200px;
   margin: 0 auto;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.loaded .interests-content {
-  opacity: 1;
-  transform: translateY(0);
+  position: relative;
 }
 
 .interests-page h1 {
@@ -23,6 +17,12 @@
   margin-bottom: 4rem;
   text-align: center;
   color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  filter: drop-shadow(0 0 2em #646cffaa);
+  position: relative;
+  z-index: 0;
 }
 
 .interests-grid {
@@ -30,23 +30,22 @@
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
   padding: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .interest-item {
   background: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
   padding: 2.5rem;
-  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
   min-height: 280px;
-}
-
-.interest-item:hover {
-  transform: translateY(-4px);
-  background: rgba(255, 255, 255, 0.05);
+  will-change: transform;
+  position: relative;
+  z-index: 1;
 }
 
 .interest-item .material-icons {

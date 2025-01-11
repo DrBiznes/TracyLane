@@ -29,6 +29,9 @@ export const Menu = () => {
 
   const renderMenu = () => (
     <nav className="menu-nav">
+      <Link to="/" className="menu-item" onClick={closeMenu}>
+        Home
+      </Link>
       <button 
         className="menu-item"
         onClick={() => switchMode('projects')}

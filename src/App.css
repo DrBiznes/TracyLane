@@ -139,6 +139,7 @@
   backdrop-filter: blur(8px);
   transition: transform 0.3s ease;
   margin: 0 auto;
+  cursor: pointer;
 }
 
 .project-image .image-wrapper {
@@ -146,6 +147,7 @@
   width: 100%;
   height: 0;
   padding-bottom: 100%;
+  cursor: pointer;
 }
 
 .project-image.landscape .image-wrapper {

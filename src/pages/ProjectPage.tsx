@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { projectsData } from '../data/projects';
 import './ProjectPage.css';
 import { useEffect } from 'react';
@@ -31,148 +31,163 @@ export const ProjectPage = () => {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [id]); // Re-run when project ID changes
+  }, [id]);
 
   if (!project) {
     return <div>Project not found</div>;
   }
 
+  const pageVariants = {
+    initial: {
+      opacity: 0,
+      y: 20,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        when: "beforeChildren",
+        staggerChildren: 0.1,
+      },
+    },
+    exit: {
+      opacity: 0,
+      y: -20,
+      transition: {
+        duration: 0.4,
+      },
+    },
+  };
+
+  const contentVariants = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -20 },
+  };
+
   return (
-    <motion.article 
-      className="project-page"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <motion.div 
-        className="project-hero"
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        <div className="project-hero-overlay">
-          <motion.div 
-            className="project-hero-content"
-            initial={{ scale: 0.95, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <motion.h1
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              {project.title}
-            </motion.h1>
-            <motion.p 
-              className="project-type"
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-            >
-              {project.description}
-            </motion.p>
-          </motion.div>
-        </div>
-      </motion.div>
-      
-      <motion.div 
-        className="project-details"
-        initial={{ y: 30, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
+    <AnimatePresence mode="wait">
+      <motion.article 
+        key={id}
+        className="project-page"
+        variants={pageVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
       >
         <motion.div 
-          className="project-body"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
+          className="project-hero"
+          variants={contentVariants}
         >
-          <p>{project.body}</p>
-        </motion.div>
-        
-        {project.credits && project.credits.length > 0 && (
-          <motion.div 
-            className="project-credits"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-          >
-            <h3>Credits</h3>
-            {project.credits.map((credit, index) => (
-              <motion.div 
-                key={index} 
-                className="credit-item"
-                initial={{ x: -20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
+          <div className="project-hero-overlay">
+            <motion.div 
+              className="project-hero-content"
+              variants={contentVariants}
+            >
+              <motion.h1 variants={contentVariants}>
+                {project.title}
+              </motion.h1>
+              <motion.p 
+                className="project-type"
+                variants={contentVariants}
               >
-                <div className="credit-role">{credit.role}</div>
-                <div className="credit-name">{credit.name}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-        )}
-        
-        <motion.div 
-          className="project-links-section"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.7 }}
-        >
-          <h3>Links</h3>
-          <div className="project-platforms">
-            {Object.entries(project.links).map(([platform, url], index) => (
-              <motion.a 
-                key={platform}
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`platform-link ${platform}`}
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {PlatformIcons[platform as keyof typeof PlatformIcons]}
-                {platform === 'appleMusic' ? 'Apple Music' : 
-                 platform.charAt(0).toUpperCase() + platform.slice(1)}
-              </motion.a>
-            ))}
+                {project.description}
+              </motion.p>
+            </motion.div>
           </div>
         </motion.div>
-      </motion.div>
+        
+        <motion.div 
+          className="project-details"
+          variants={contentVariants}
+        >
+          <motion.div 
+            className="project-body"
+            variants={contentVariants}
+          >
+            <p>{project.body}</p>
+          </motion.div>
+          
+          {project.credits && project.credits.length > 0 && (
+            <motion.div 
+              className="project-credits"
+              variants={contentVariants}
+            >
+              <h3>Credits</h3>
+              <div className="credits-list">
+                {project.credits.map((credit, index) => (
+                  <motion.div 
+                    key={index} 
+                    className="credit-item"
+                    variants={contentVariants}
+                  >
+                    <div className="credit-role">{credit.role}</div>
+                    <div className="credit-name">{credit.name}</div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          )}
+          
+          <motion.div 
+            className="project-links-section"
+            variants={contentVariants}
+          >
+            <h3>Links</h3>
+            <div className="project-platforms">
+              {Object.entries(project.links).map(([platform, url], index) => (
+                <motion.a 
+                  key={platform}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`platform-link ${platform}`}
+                  variants={contentVariants}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {PlatformIcons[platform as keyof typeof PlatformIcons]}
+                  {platform === 'appleMusic' ? 'Apple Music' : 
+                   platform.charAt(0).toUpperCase() + platform.slice(1)}
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+        </motion.div>
 
-      <motion.nav 
-        className="project-navigation"
-        initial={{ y: 30, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.8 }}
-      >
-        {prevProject && (
-          <motion.div
-            whileHover={{ x: -5 }}
-            transition={{ duration: 0.2 }}
-          >
-            <Link to={`/project/${prevProject.id}`} className="nav-link prev">
-              <span className="nav-label">Previous Project</span>
-              <span className="nav-title">{prevProject.title}</span>
-            </Link>
-          </motion.div>
-        )}
-        {nextProject && (
-          <motion.div
-            whileHover={{ x: 5 }}
-            transition={{ duration: 0.2 }}
-          >
-            <Link to={`/project/${nextProject.id}`} className="nav-link next">
-              <span className="nav-label">Next Project</span>
-              <span className="nav-title">{nextProject.title}</span>
-            </Link>
-          </motion.div>
-        )}
-      </motion.nav>
-    </motion.article>
+        <motion.nav 
+          className="project-navigation"
+          variants={contentVariants}
+        >
+          <div className="nav-links-container">
+            {prevProject && (
+              <motion.div
+                className="nav-item prev-nav"
+                variants={contentVariants}
+                whileHover={{ x: -5 }}
+              >
+                <Link to={`/project/${prevProject.id}`} className="nav-link prev">
+                  <span className="nav-label">Previous Project</span>
+                  <span className="nav-title">{prevProject.title}</span>
+                </Link>
+              </motion.div>
+            )}
+            {nextProject && (
+              <motion.div
+                className="nav-item next-nav"
+                variants={contentVariants}
+                whileHover={{ x: 5 }}
+              >
+                <Link to={`/project/${nextProject.id}`} className="nav-link next">
+                  <span className="nav-label">Next Project</span>
+                  <span className="nav-title">{nextProject.title}</span>
+                </Link>
+              </motion.div>
+            )}
+          </div>
+        </motion.nav>
+      </motion.article>
+    </AnimatePresence>
   );
 }; 

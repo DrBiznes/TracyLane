@@ -45,29 +45,31 @@ export const Project = ({
         ease: [0.22, 1, 0.36, 1]
       }}
     >
-      <motion.div 
-        className={`project-image ${aspectRatio}`}
-        whileHover={{ scale: 1.02 }}
-        transition={{ duration: 0.3 }}
-      >
+      <Link to={`/project/${id}`} style={{ display: 'block' }}>
         <motion.div 
-          className="image-wrapper"
-          initial={{ scale: 1.1, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ 
-            duration: 1,
-            ease: [0.22, 1, 0.36, 1],
-            delay: 0.2
-          }}
+          className={`project-image ${aspectRatio}`}
+          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.3 }}
         >
-          <img 
-            src={imageUrl} 
-            alt={imageAlt || title}
-            loading="lazy"
-          />
+          <motion.div 
+            className="image-wrapper"
+            initial={{ scale: 1.1, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ 
+              duration: 1,
+              ease: [0.22, 1, 0.36, 1],
+              delay: 0.2
+            }}
+          >
+            <img 
+              src={imageUrl} 
+              alt={imageAlt || title}
+              loading="lazy"
+            />
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </Link>
       <motion.div 
         className="project-content"
         initial={{ opacity: 0, x: -30 }}

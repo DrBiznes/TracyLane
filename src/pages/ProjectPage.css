@@ -9,7 +9,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: -2rem;
 }
 
 .project-hero-overlay {
@@ -66,6 +66,56 @@
   line-height: 1.6;
   color: var(--color-primary);
   margin-bottom: 2rem;
+}
+
+.project-credits {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+}
+
+.project-credits h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--color-primary);
+  opacity: 0.8;
+  margin: 0;
+}
+
+.project-credits h3::after {
+  content: ":";
+  margin-right: 0.5rem;
+}
+
+.credits-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+}
+
+.credit-item {
+  font-family: var(--font-mono);
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.credit-role {
+  opacity: 0.6;
+}
+
+.credit-role::after {
+  content: ":";
+}
+
+.credit-name {
+  font-weight: 500;
 }
 
 .project-links-section {

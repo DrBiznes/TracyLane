@@ -4,15 +4,23 @@
       "id": "on-the-line",
       "title": "On The Line",
       "description": "Music Production & Creative Direction",
-      "body": "A groundbreaking album that explores the boundaries between electronic and acoustic sounds, featuring collaborations with artists from around the globe.",
+      "body": "During a car ride back to his place, an old friend from high school showed me a song he was working on. I immediately knew I could make it sound great.  He gave me the opportunity, emailed his tracks, and let me know what he was expecting out of the mix. With just my laptop I made it into what it is today.",
+      "credits": [
+        {
+          "role": "Producer",
+          "name": "Trav"
+        },
+        {
+          "role": "Mixing",
+          "name": "Tracy Lane"
+        }
+      ],
       "imageUrl": "/project/OnTheLine.jpg",
       "imageAlt": "On The Line Album Cover",
       "backgroundImage": "/project/mixerchanels.jpg",
       "aspectRatio": "square",
       "links": {
-        "spotify": "https://spotify.com/album/...",
-        "appleMusic": "https://music.apple.com/album/...",
-        "instagram": "https://instagram.com/..."
+        "youtube": "https://www.youtube.com/watch?v=b48VpQ5rWGo"
       }
     },
     {

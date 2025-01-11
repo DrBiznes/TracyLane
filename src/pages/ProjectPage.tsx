@@ -49,6 +49,18 @@ export const ProjectPage = () => {
           <p>{project.body}</p>
         </div>
         
+        {project.credits && project.credits.length > 0 && (
+          <div className="project-credits">
+            <h3>Credits</h3>
+            {project.credits.map((credit, index) => (
+              <div key={index} className="credit-item">
+                <div className="credit-role">{credit.role}</div>
+                <div className="credit-name">{credit.name}</div>
+              </div>
+            ))}
+          </div>
+        )}
+        
         <div className="project-links-section">
           <h3>Listen Now</h3>
           <div className="project-platforms">

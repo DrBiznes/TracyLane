@@ -657,3 +657,25 @@ html {
     margin-top: 1rem;
   }
 }
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-credit {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+.footer-credit a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer-credit a:hover {
+  opacity: 1;
+}

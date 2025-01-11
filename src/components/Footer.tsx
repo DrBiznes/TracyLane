@@ -4,6 +4,9 @@ export const Footer = () => {
       <div className="footer-content">
         <div className="footer-left">
           <p>© {new Date().getFullYear()} Tracy Lane</p>
+          <p className="footer-credit">
+            Website by <a href="https://jamino.me" target="_blank" rel="noopener noreferrer">Jamino</a>
+          </p>
         </div>
         <div className="footer-right">
           <a href="mailto:contact@tracylane.com">contact@tracylane.com</a>

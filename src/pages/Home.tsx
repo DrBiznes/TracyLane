@@ -1,33 +1,52 @@
 import { Project } from '../components/Project';
 
-// Add the projects data
 const projects = [
   {
-    title: "Project One",
-    description: "Description of project one goes here.",
-    imageUrl: "/project1.jpg", // Make sure this image exists in your public folder
+    title: "On The Line",
+    description: "Music Production & Creative Direction",
+    imageUrl: "/projects/OnTheLine.jpg",
+    imageAlt: "On The Line Album Cover",
+    aspectRatio: "square",
     link: "#"
   },
   {
-    title: "Project Two",
-    description: "Description of project two goes here.",
-    imageUrl: "/project2.jpg", // Make sure this image exists in your public folder
+    title: "Through Space and Time",
+    description: "Music Production & Creative Direction", 
+    imageUrl: "/projects/ThroughSpace.jpg",
+    imageAlt: "Through Space and Time Album Cover",
+    aspectRatio: "square",
     link: "#"
   }
-  // Add more projects as needed
-];
+] as const;
 
 export const Home = () => {
+  const scrollToProjects = () => {
+    const projectsSection = document.querySelector('.projects-container');
+    projectsSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <>
       <header className="hero">
         <h1 className="hero-title">Tracy Lane</h1>
         <p>Music • Film • Creative Direction</p>
+        <button onClick={scrollToProjects} className="scroll-indicator">
+          <span>My Work</span>
+          <div className="scroll-arrows">
+            <span className="material-icons">keyboard_arrow_down</span>
+            <span className="material-icons">keyboard_arrow_down</span>
+          </div>
+        </button>
       </header>
 
-      <main>
+      <main className="projects-container">
         {projects.map((project, index) => (
-          <Project key={index} {...project} />
+          <Project 
+            key={project.title} 
+            {...project} 
+            hasNextProject={index < projects.length - 1}
+            index={index}
+          />
         ))}
       </main>
     </>

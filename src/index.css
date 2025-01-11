@@ -32,3 +32,23 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Add to existing styles */
+.projects-container {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Improve text rendering */
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Improve button and link tap targets on mobile */
+a, button {
+  touch-action: manipulation;
+}

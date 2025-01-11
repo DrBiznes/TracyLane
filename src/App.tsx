@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Interests } from './pages/Interests';
@@ -9,7 +9,7 @@ import backgroundImage from './assets/background.jpg';
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <div className="app">
         <div 
           className="background"
@@ -28,7 +28,7 @@ function App() {
 
         <Footer />
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 

@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import projectsData from '../data/projects.json';
 import './ProjectPage.css';
+import { useEffect } from 'react';
 
 export const ProjectPage = () => {
   const { id } = useParams();
@@ -9,18 +10,32 @@ export const ProjectPage = () => {
   const nextProject = projectsData.projects[projectIndex + 1];
   const prevProject = projectsData.projects[projectIndex - 1];
 
+  useEffect(() => {
+    const background = document.querySelector('.background') as HTMLElement;
+    if (background && project) {
+      // Preload the image
+      const img = new Image();
+      background.classList.add('transitioning');
+
+      img.onload = () => {
+        background.style.backgroundImage = `url(${project.backgroundImage})`;
+        // Short delay to ensure smooth transition
+        setTimeout(() => {
+          background.classList.remove('transitioning');
+        }, 50);
+      };
+
+      img.src = project.backgroundImage;
+    }
+  }, [project]);
+
   if (!project) {
     return <div>Project not found</div>;
   }
 
   return (
     <article className="project-page">
-      <div 
-        className="project-hero"
-        style={{ 
-          backgroundImage: `url(${project.backgroundImage})`
-        }}
-      >
+      <div className="project-hero">
         <div className="project-hero-overlay">
           <div className="project-hero-content">
             <h1>{project.title}</h1>

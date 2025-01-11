@@ -1,16 +1,15 @@
 .project-page {
   min-height: 100vh;
-  background: var(--color-bg);
   position: relative;
+  padding: 2rem 0;
 }
 
 .project-hero {
-  height: 70vh;
+  height: 40vh;
   position: relative;
-  background-size: cover;
-  background-position: center;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
 .project-hero-overlay {
@@ -19,62 +18,65 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(10, 10, 15, 0.4) 0%,
-    rgba(10, 10, 15, 0.95) 100%
-  );
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .project-hero-content {
+  background: rgba(10, 10, 15, 0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 0 2rem;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  width: 100%;
+  width: calc(100% - 4rem);
 }
 
 .project-hero h1 {
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 8vw, 5rem);
-  margin-bottom: 1rem;
+  font-size: clamp(2rem, 6vw, 4rem);
+  margin-bottom: 0.5rem;
   color: var(--color-primary);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .project-type {
   font-family: var(--font-mono);
   font-size: clamp(1rem, 2vw, 1.25rem);
   color: var(--color-primary);
-  opacity: 0.8;
+  opacity: 0.9;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .project-details {
   max-width: 800px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  background: var(--color-bg);
+  margin: 0 auto 2rem;
+  padding: 2rem;
   position: relative;
   z-index: 2;
+  background: rgba(10, 10, 15, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .project-body {
   font-family: var(--font-mono);
-  font-size: 1.1rem;
-  line-height: 1.8;
+  font-size: 1rem;
+  line-height: 1.6;
   color: var(--color-primary);
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .project-links-section {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 2rem;
+  padding-top: 1.5rem;
 }
 
 .project-links-section h3 {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
   color: var(--color-primary);
 }
 
@@ -94,21 +96,26 @@
   font-size: 0.9rem;
   border-radius: 4px;
   transition: all 0.2s ease;
+  border: 1px solid transparent;
 }
 
 .platform-link:hover {
   transform: translateY(-2px);
-  opacity: 0.9;
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .project-navigation {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem;
   display: flex;
   justify-content: space-between;
   gap: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(10, 10, 15, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 .nav-link {
@@ -116,8 +123,10 @@
   flex-direction: column;
   text-decoration: none;
   color: var(--color-primary);
-  transition: opacity 0.2s ease;
+  transition: all 0.2s ease;
   flex: 1;
+  padding: 1rem;
+  border-radius: 4px;
 }
 
 .nav-link.prev {
@@ -142,30 +151,48 @@
 }
 
 .nav-link:hover {
-  opacity: 0.8;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 768px) {
+  .project-page {
+    padding: 1rem 0;
+  }
+
+  .project-hero {
+    height: 35vh;
+    margin-bottom: 1.5rem;
+  }
+
   .project-hero-content {
-    padding: 3rem 1.5rem;
+    margin: 0 1rem;
+    padding: 1.5rem;
+    width: calc(100% - 2rem);
   }
 
   .project-details {
-    padding: 3rem 1.5rem;
+    padding: 1.5rem;
+    margin: 0 1rem 1.5rem;
   }
 
   .project-navigation {
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 1.5rem;
-  }
-
-  .nav-link.next {
-    align-items: flex-start;
-    text-align: left;
+    margin: 0 1rem;
+    padding: 1rem;
   }
 }
 
-.background.project-background {
-  transition: background-image 0.5s ease-in-out;
-} 
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: top center;
+  z-index: -1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.background.transitioning {
+  opacity: 0;
+}

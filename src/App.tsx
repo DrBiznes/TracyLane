@@ -34,7 +34,7 @@ function AppContent() {
         if (project?.backgroundImage) {
           newBackground = project.backgroundImage;
         } else if (location.pathname === '/about') {
-          newBackground = '/aboutbg.png';
+          newBackground = 'src/assets/aboutbg.png';
         }
 
         // Hide background for interests page

@@ -142,6 +142,7 @@
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .platform-link {
@@ -173,7 +174,7 @@
 }
 
 .platform-link.appleMusic {
-  background: linear-gradient(135deg, #FB233B, #FB5183);
+  background: #fa2f4c;
 }
 
 .platform-link:hover {

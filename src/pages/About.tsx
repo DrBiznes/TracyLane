@@ -37,16 +37,8 @@ export const About = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
-                About Me
+                ABOUT ME
               </motion.h1>
-              <motion.p 
-                className="about-subtitle"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-              >
-                Student at University of Oregon
-              </motion.p>
             </motion.div>
           </div>
         </motion.div>

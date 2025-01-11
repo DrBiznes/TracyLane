@@ -28,9 +28,24 @@ function AppContent() {
 
       // Wait for fade out
       setTimeout(() => {
-        const newBackground = project?.backgroundImage || backgroundImage;
-        setCurrentBackground(newBackground);
-        background.style.backgroundImage = `url(${newBackground})`;
+        let newBackground = backgroundImage;
+        
+        // Set background based on route
+        if (project?.backgroundImage) {
+          newBackground = project.backgroundImage;
+        } else if (location.pathname === '/about') {
+          newBackground = '/aboutbg.png';
+        }
+
+        // Hide background for interests page
+        if (location.pathname === '/interests') {
+          background.style.display = 'none';
+        } else {
+          background.style.display = 'block';
+          setCurrentBackground(newBackground);
+          background.style.backgroundImage = `url(${newBackground})`;
+        }
+        
         // Remove transitioning class to fade in
         background.classList.remove('transitioning');
       }, 800);

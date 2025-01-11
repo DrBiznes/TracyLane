@@ -24,9 +24,6 @@ export const Menu = ({ isOpen, onClose }: MenuProps) => {
           </a>
         </nav>
       </div>
-      <button className="menu-button close-button" onClick={onClose}>
-        <span className="material-icons">close</span>
-      </button>
     </div>
   );
 }; 

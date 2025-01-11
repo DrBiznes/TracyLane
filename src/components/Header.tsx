@@ -21,7 +21,13 @@ export const Header = () => {
           <a href="/" className="logo">Tracy Lane</a>
         </div>
         <div className="header-right">
-          <button className="menu-button" onClick={() => setIsMenuOpen(true)}>Menu</button>
+          <button 
+            className={`menu-button ${isMenuOpen ? 'open' : ''}`}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <span className="material-icons" style={{ opacity: isMenuOpen ? 1 : 0 }}>close</span>
+            <span style={{ opacity: isMenuOpen ? 0 : 1 }}>Menu</span>
+          </button>
         </div>
       </nav>
       <Menu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />

@@ -14,7 +14,7 @@ export const Home = () => {
           onClick={() => openMenu('projects')} 
           className="see-work-button"
         >
-          See My Work
+          All My Work
         </button>
       </header>
 

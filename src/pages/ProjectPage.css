@@ -2,6 +2,7 @@
   min-height: 100vh;
   position: relative;
   padding: 2rem 0;
+  isolation: isolate;
 }
 
 .project-hero {
@@ -30,6 +31,7 @@
   margin: 0 2rem;
   max-width: 1200px;
   width: calc(100% - 4rem);
+  will-change: transform, opacity;
 }
 
 .project-hero h1 {
@@ -38,6 +40,7 @@
   margin-bottom: 0.5rem;
   color: var(--color-primary);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  will-change: transform, opacity;
 }
 
 .project-type {
@@ -46,6 +49,7 @@
   color: var(--color-primary);
   opacity: 0.9;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  will-change: transform, opacity;
 }
 
 .project-details {
@@ -58,6 +62,7 @@
   backdrop-filter: blur(10px);
   border-radius: 8px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  will-change: transform, opacity;
 }
 
 .project-body {
@@ -66,6 +71,7 @@
   line-height: 1.6;
   color: var(--color-primary);
   margin-bottom: 2rem;
+  will-change: transform, opacity;
 }
 
 .project-credits {
@@ -76,6 +82,7 @@
   align-items: baseline;
   flex-wrap: wrap;
   gap: 0.75rem 1.5rem;
+  will-change: transform, opacity;
 }
 
 .project-credits h3 {
@@ -104,6 +111,7 @@
   display: flex;
   gap: 0.5rem;
   align-items: baseline;
+  will-change: transform, opacity;
 }
 
 .credit-role {
@@ -145,8 +153,8 @@
   font-family: var(--font-mono);
   font-size: 0.9rem;
   border-radius: 4px;
-  transition: all 0.2s ease;
   border: 1px solid transparent;
+  will-change: transform, opacity;
 }
 
 .platform-link:hover {
@@ -166,6 +174,7 @@
   backdrop-filter: blur(10px);
   border-radius: 8px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  will-change: transform, opacity;
 }
 
 .nav-link {
@@ -173,10 +182,10 @@
   flex-direction: column;
   text-decoration: none;
   color: var(--color-primary);
-  transition: all 0.2s ease;
   flex: 1;
   padding: 0.75rem;
   border-radius: 4px;
+  will-change: transform;
 }
 
 .nav-link.prev {

@@ -92,6 +92,14 @@
   gap: 0.5rem;
 }
 
+.hero:hover .hero-title {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.hero:hover .hero-subtitle {
+  filter: drop-shadow(0 0 1em #646cff77);
+}
+
 .hero h1 {
   font-family: var(--font-heading);
   font-size: clamp(3rem, 10vw, 8rem);
@@ -99,12 +107,14 @@
   text-transform: uppercase;
   letter-spacing: -0.02em;
   margin-bottom: 0.25rem;
+  transition: filter 500ms ease;
 }
 
 .hero p {
   font-family: var(--font-mono);
   font-size: clamp(1rem, 2vw, 1.5rem);
   opacity: 0.8;
+  transition: filter 500ms ease;
 }
 
 .project-container {
@@ -236,6 +246,10 @@
   max-width: 500px;
 }
 
+.project-container:hover .project-content h2 {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
 .project-content h2 {
   font-family: var(--font-heading);
   font-size: clamp(2.5rem, 4vw, 3.5rem);
@@ -243,6 +257,7 @@
   margin-bottom: 1.5rem;
   line-height: 1.1;
   letter-spacing: -0.02em;
+  transition: filter 500ms ease;
 }
 
 .project-content p {

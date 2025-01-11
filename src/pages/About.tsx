@@ -7,6 +7,7 @@ export const About = () => {
 
   useEffect(() => {
     setIsLoaded(true);
+    window.scrollTo(0, 0);
   }, []);
 
   return (

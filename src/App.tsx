@@ -9,6 +9,7 @@ import { Footer } from './components/Footer';
 import { Menu } from './components/Menu';
 import './App.css';
 import backgroundImage from './assets/background.jpg';
+import aboutBackground from './assets/aboutbg.png';
 import { MenuProvider } from './context/MenuContext';
 import { projectsData } from './data/projects';
 
@@ -34,7 +35,7 @@ function AppContent() {
         if (project?.backgroundImage) {
           newBackground = project.backgroundImage;
         } else if (location.pathname === '/about') {
-          newBackground = 'src/assets/aboutbg.png';
+          newBackground = aboutBackground;
         }
 
         // Hide background for interests page
@@ -43,7 +44,6 @@ function AppContent() {
         } else {
           background.style.display = 'block';
           setCurrentBackground(newBackground);
-          background.style.backgroundImage = `url(${newBackground})`;
         }
         
         // Remove transitioning class to fade in

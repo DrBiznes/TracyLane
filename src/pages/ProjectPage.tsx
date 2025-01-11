@@ -136,7 +136,7 @@ export const ProjectPage = () => {
           >
             <h3>Links</h3>
             <div className="project-platforms">
-              {Object.entries(project.links).map(([platform, url], index) => (
+              {Object.entries(project.links).map(([platform, url]) => (
                 <motion.a 
                   key={platform}
                   href={url}

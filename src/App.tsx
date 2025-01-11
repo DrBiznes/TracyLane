@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { ProjectPage } from './pages/ProjectPage';
@@ -10,30 +10,40 @@ import { Menu } from './components/Menu';
 import './App.css';
 import backgroundImage from './assets/background.jpg';
 import { MenuProvider } from './context/MenuContext';
+import projectsData from './data/projects.json';
 
 // Separate component to handle location-based effects
 function AppContent() {
   const location = useLocation();
+  const [currentBackground, setCurrentBackground] = useState(backgroundImage);
 
   useEffect(() => {
     const background = document.querySelector('.background') as HTMLElement;
     if (background) {
       background.classList.add('transitioning');
 
-      if (!location.pathname.includes('/project/')) {
-        // Wait for fade out
-        setTimeout(() => {
-          background.style.backgroundImage = `url(${backgroundImage})`;
-          // Remove transitioning class to fade in
-          background.classList.remove('transitioning');
-        }, 300);
-      }
+      // Check if we're on a project page
+      const projectId = location.pathname.match(/\/project\/([^/]+)/)?.[1];
+      const project = projectId ? projectsData.projects.find(p => p.id === projectId) : null;
+
+      // Wait for fade out
+      setTimeout(() => {
+        if (project) {
+          setCurrentBackground(project.backgroundImage);
+        } else {
+          setCurrentBackground(backgroundImage);
+        }
+        
+        background.style.backgroundImage = `url(${project ? project.backgroundImage : backgroundImage})`;
+        // Remove transitioning class to fade in
+        background.classList.remove('transitioning');
+      }, 800);
     }
-  }, [location]);
+  }, [location.pathname]);
 
   return (
     <div className="app">
-      <div className="background"></div>
+      <div className="background" style={{ backgroundImage: `url(${currentBackground})` }}></div>
       <div className="overlay"></div>
       
       <Header />

@@ -24,9 +24,6 @@
 }
 
 .project-hero-content {
-  background: rgba(10, 10, 15, 0.7);
-  backdrop-filter: blur(8px);
-  border-radius: 8px;
   padding: 2rem;
   margin: 0 2rem;
   max-width: 1200px;

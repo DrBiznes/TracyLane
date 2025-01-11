@@ -38,11 +38,11 @@ function AppContent() {
           newBackground = aboutBackground;
         }
 
-        // Hide background for interests page
+        // Special handling for interests page
         if (location.pathname === '/interests') {
-          background.style.display = 'none';
+          background.classList.add('hidden');
         } else {
-          background.style.display = 'block';
+          background.classList.remove('hidden');
           setCurrentBackground(newBackground);
         }
         

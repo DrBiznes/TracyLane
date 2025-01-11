@@ -1,7 +1,7 @@
 import { LinkedInIcon } from './icons/LinkedInIcon';
 import { Link } from 'react-router-dom';
 import { useMenu } from '../context/MenuContext';
-import projectsData from '../data/projects.json';
+import { projectsData, Project } from '../data/projects';
 
 export const Menu = () => {
   const { isOpen, mode, closeMenu, switchMode } = useMenu();
@@ -10,7 +10,7 @@ export const Menu = () => {
     <div className="menu-projects">
       <h2 className="menu-projects-title">Projects</h2>
       <div className="menu-projects-grid">
-        {projectsData.projects.map((project) => (
+        {projectsData.projects.map((project: Project) => (
           <Link 
             key={project.id}
             to={`/project/${project.id}`}

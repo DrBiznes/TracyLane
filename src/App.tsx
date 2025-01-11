@@ -10,7 +10,7 @@ import { Menu } from './components/Menu';
 import './App.css';
 import backgroundImage from './assets/background.jpg';
 import { MenuProvider } from './context/MenuContext';
-import projectsData from './data/projects.json';
+import { projectsData, Project } from './data/projects';
 
 // Separate component to handle location-based effects
 function AppContent() {
@@ -28,13 +28,9 @@ function AppContent() {
 
       // Wait for fade out
       setTimeout(() => {
-        if (project) {
-          setCurrentBackground(project.backgroundImage);
-        } else {
-          setCurrentBackground(backgroundImage);
-        }
-        
-        background.style.backgroundImage = `url(${project ? project.backgroundImage : backgroundImage})`;
+        const newBackground = project?.backgroundImage || backgroundImage;
+        setCurrentBackground(newBackground);
+        background.style.backgroundImage = `url(${newBackground})`;
         // Remove transitioning class to fade in
         background.classList.remove('transitioning');
       }, 800);
@@ -48,14 +44,12 @@ function AppContent() {
       
       <Header />
       <Menu />
-      
-      <Routes>
+      <Routes location={location}>
         <Route path="/" element={<Home />} />
         <Route path="/project/:id" element={<ProjectPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/interests" element={<Interests />} />
       </Routes>
-
       <Footer />
     </div>
   );

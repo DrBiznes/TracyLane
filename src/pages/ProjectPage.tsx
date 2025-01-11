@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import projectsData from '../data/projects.json';
+import { projectsData, Project } from '../data/projects';
 import './ProjectPage.css';
 import { useEffect } from 'react';
 

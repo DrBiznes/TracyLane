@@ -1,6 +1,6 @@
-import { Project } from '../components/Project';
+import { Project as ProjectComponent } from '../components/Project';
 import { useMenu } from '../context/MenuContext';
-import projectsData from '../data/projects.json';
+import { projectsData, Project } from '../data/projects';
 
 export const Home = () => {
   const { openMenu } = useMenu();
@@ -19,8 +19,8 @@ export const Home = () => {
       </header>
 
       <main className="projects-container">
-        {projectsData.projects.map((project, index) => (
-          <Project 
+        {projectsData.projects.map((project: Project, index: number) => (
+          <ProjectComponent 
             key={project.id}
             id={project.id}
             title={project.title}

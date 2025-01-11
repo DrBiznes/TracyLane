@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom';
+import { useMenu } from '../context/MenuContext';
 import { useEffect, useState } from 'react';
-import { Menu } from './Menu';
 
 export const Header = () => {
+  const { isOpen, mode, openMenu, goBack } = useMenu();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,22 +16,20 @@ export const Header = () => {
   }, []);
 
   return (
-    <>
-      <nav className={`main-header ${isScrolled ? 'scrolled' : ''}`}>
-        <div className="header-left">
-          <a href="/" className="logo">Tracy Lane</a>
-        </div>
-        <div className="header-right">
-          <button 
-            className={`menu-button ${isMenuOpen ? 'open' : ''}`}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <span className="material-icons" style={{ opacity: isMenuOpen ? 1 : 0 }}>close</span>
-            <span style={{ opacity: isMenuOpen ? 0 : 1 }}>Menu</span>
-          </button>
-        </div>
-      </nav>
-      <Menu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
-    </>
+    <header className={`main-header ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="header-left">
+        <Link to="/" className="logo">TL</Link>
+      </div>
+      <div className="header-right">
+        <button 
+          className={`menu-button ${isOpen ? 'open' : ''} ${mode === 'projects' ? 'projects-mode' : ''}`}
+          onClick={() => isOpen ? goBack() : openMenu('menu')}
+        >
+          <span className="material-icons icon-close">close</span>
+          <span className="material-icons icon-arrow">arrow_back</span>
+          <span className="text-menu">Menu</span>
+        </button>
+      </div>
+    </header>
   );
 }; 

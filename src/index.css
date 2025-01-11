@@ -52,3 +52,150 @@ h1, h2, h3, h4, h5, h6 {
 a, button {
   touch-action: manipulation;
 }
+
+/* Add these new styles and modify existing ones */
+.hero {
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 4vh;
+  gap: 1rem;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.scroll-indicator {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  transition: opacity 0.3s ease;
+  margin-top: auto;
+}
+
+.scroll-indicator:hover {
+  opacity: 0.8;
+}
+
+.scroll-arrows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: -0.5rem;
+}
+
+.scroll-arrows .material-icons {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.see-work-button {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-accent);
+  padding: 0.8rem 2rem;
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.see-work-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--color-accent);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.see-work-button:hover::before {
+  width: 100%;
+}
+
+/* Remove these classes as they're no longer needed */
+.scroll-indicator,
+.scroll-arrows {
+  display: none;
+}
+
+/* Add these new styles for the projects menu */
+.menu-projects {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.menu-projects-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.menu-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.menu-project-item {
+  text-decoration: none;
+  color: var(--color-primary);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.menu-project-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.menu-project-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.menu-project-content p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .menu-projects {
+    padding: 1rem;
+  }
+  
+  .menu-projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

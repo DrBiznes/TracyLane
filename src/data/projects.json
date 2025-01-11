@@ -1,0 +1,34 @@
+{
+  "projects": [
+    {
+      "id": "on-the-line",
+      "title": "On The Line",
+      "description": "Music Production & Creative Direction",
+      "body": "A groundbreaking album that explores the boundaries between electronic and acoustic sounds, featuring collaborations with artists from around the globe.",
+      "imageUrl": "/project/OnTheLine.jpg",
+      "imageAlt": "On The Line Album Cover",
+      "backgroundImage": "/project/mixerchanels.jpg",
+      "aspectRatio": "square",
+      "links": {
+        "spotify": "https://spotify.com/album/...",
+        "appleMusic": "https://music.apple.com/album/...",
+        "instagram": "https://instagram.com/..."
+      }
+    },
+    {
+      "id": "through-space-and-time",
+      "title": "Through Space and Time",
+      "description": "Music Production & Creative Direction",
+      "body": "An immersive journey through sonic landscapes, this project combines traditional orchestral elements with cutting-edge electronic production.",
+      "imageUrl": "/project/ThroughSpace.jpg",
+      "imageAlt": "Through Space and Time Album Cover",
+      "backgroundImage": "/project/ThroughSpaceBackground.jpg",
+      "aspectRatio": "square",
+      "links": {
+        "spotify": "https://spotify.com/album/...",
+        "appleMusic": "https://music.apple.com/album/...",
+        "youtube": "https://youtube.com/..."
+      }
+    }
+  ]
+} 

@@ -72,13 +72,15 @@
 }
 
 .hero {
-  height: 100vh;
+  height: auto;
+  min-height: 30vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding: 2rem;
+  padding: 5rem 2rem 2rem;
   position: relative;
+  gap: 0.5rem;
 }
 
 .hero h1 {
@@ -87,7 +89,7 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  margin-bottom: 1rem;
+  margin-bottom: 0.25rem;
 }
 
 .hero p {
@@ -336,25 +338,60 @@
   position: relative;
 }
 
-.menu-button span.material-icons {
+.menu-button .material-icons,
+.menu-button .text-menu {
   position: absolute;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  transform: rotate(0deg);
+  transition: all 0.3s ease;
 }
 
-.menu-button.open span.material-icons {
-  transform: rotate(180deg);
-}
-
-.menu-button > span:not(.material-icons) {
-  position: absolute;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  transform: translateY(0);
-}
-
-.menu-button.open > span:not(.material-icons) {
-  transform: translateY(10px);
+.menu-button .icon-close {
   opacity: 0;
+  transform: rotate(-180deg) scale(0.5);
+}
+
+.menu-button .icon-arrow {
+  opacity: 0;
+  transform: translateX(10px) scale(0.5);
+}
+
+.menu-button .text-menu {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Menu closed state */
+.menu-button:not(.open) .text-menu {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Menu open state (regular menu) */
+.menu-button.open:not(.projects-mode) .icon-close {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+.menu-button.open:not(.projects-mode) .text-menu,
+.menu-button.open:not(.projects-mode) .icon-arrow {
+  opacity: 0;
+  transform: translateX(10px) scale(0.5);
+}
+
+/* Projects mode state */
+.menu-button.open.projects-mode .icon-arrow {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.menu-button.open.projects-mode .icon-close,
+.menu-button.open.projects-mode .text-menu {
+  opacity: 0;
+  transform: translateX(-10px) scale(0.5);
+}
+
+/* Hover effect */
+.menu-button:hover {
+  opacity: 0.8;
 }
 
 .main-footer {
@@ -435,7 +472,7 @@ main {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: #0b0a0f;
+  background-color: var(--color-bg);
   backdrop-filter: blur(10px);
   z-index: 200;
   opacity: 0;
@@ -444,6 +481,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .menu-overlay.open {
@@ -454,7 +492,12 @@ main {
 .menu-content {
   position: relative;
   width: 100%;
+  height: 100%;
   max-width: 1280px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 2rem;
 }
 
@@ -469,7 +512,6 @@ main {
   flex-direction: column;
   gap: 1rem;
   text-align: left;
-  margin-top: 4rem;
 }
 
 .menu-item {
@@ -482,6 +524,11 @@ main {
   letter-spacing: -0.02em;
   transition: opacity 0.2s ease;
   line-height: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
 }
 
 .menu-item:hover {
@@ -542,10 +589,11 @@ html {
 }
 
 .scroll-indicator {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  bottom: auto;
+  left: auto;
+  transform: none;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -678,4 +726,52 @@ html {
 
 .footer-credit a:hover {
   opacity: 1;
+}
+
+.menu-modes-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.menu-modes-container.menu {
+  transform: translateX(0);
+}
+
+.menu-modes-container.projects {
+  transform: translateX(-100%);
+}
+
+.menu-nav,
+.menu-projects {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  transition: opacity 0.3s ease;
+  padding: 2rem;
+}
+
+.menu-nav {
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+}
+
+.menu-projects {
+  left: 100%;
+}
+
+.menu-button .material-icons {
+  font-size: 24px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-button.open .material-icons {
+  transform: rotate(0deg);
 }

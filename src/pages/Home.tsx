@@ -1,50 +1,34 @@
 import { Project } from '../components/Project';
-
-const projects = [
-  {
-    title: "On The Line",
-    description: "Music Production & Creative Direction",
-    imageUrl: "/projects/OnTheLine.jpg",
-    imageAlt: "On The Line Album Cover",
-    aspectRatio: "square",
-    link: "#"
-  },
-  {
-    title: "Through Space and Time",
-    description: "Music Production & Creative Direction", 
-    imageUrl: "/projects/ThroughSpace.jpg",
-    imageAlt: "Through Space and Time Album Cover",
-    aspectRatio: "square",
-    link: "#"
-  }
-] as const;
+import { useMenu } from '../context/MenuContext';
+import projectsData from '../data/projects.json';
 
 export const Home = () => {
-  const scrollToProjects = () => {
-    const projectsSection = document.querySelector('.projects-container');
-    projectsSection?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const { openMenu } = useMenu();
 
   return (
     <>
       <header className="hero">
         <h1 className="hero-title">Tracy Lane</h1>
-        <p>Music • Film • Creative Direction</p>
-        <button onClick={scrollToProjects} className="scroll-indicator">
-          <span>My Work</span>
-          <div className="scroll-arrows">
-            <span className="material-icons">keyboard_arrow_down</span>
-            <span className="material-icons">keyboard_arrow_down</span>
-          </div>
+        <p className="hero-subtitle">Music • Film • Creative Direction</p>
+        <button 
+          onClick={() => openMenu('projects')} 
+          className="see-work-button"
+        >
+          See My Work
         </button>
       </header>
 
       <main className="projects-container">
-        {projects.map((project, index) => (
+        {projectsData.projects.map((project, index) => (
           <Project 
-            key={project.title} 
-            {...project} 
-            hasNextProject={index < projects.length - 1}
+            key={project.id}
+            id={project.id}
+            title={project.title}
+            description={project.description}
+            imageUrl={project.imageUrl}
+            imageAlt={project.imageAlt}
+            aspectRatio={project.aspectRatio}
+            hasNextProject={index < projectsData.projects.length - 1}
             index={index}
           />
         ))}

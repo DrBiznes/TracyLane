@@ -43,9 +43,9 @@ export const projectsData: ProjectsData = {
           name: "Tracy Lane"
         }
       ],
-      imageUrl: "/project/OnTheLine.jpg",
+      imageUrl: "/projectpics/OnTheLine.jpg",
       imageAlt: "On The Line Album Cover",
-      backgroundImage: "/project/mixerchanels.jpg",
+      backgroundImage: "/projectpics/mixerchanels.jpg",
       aspectRatio: "square",
       links: {
         youtube: "https://www.youtube.com/watch?v=b48VpQ5rWGo"
@@ -66,9 +66,9 @@ export const projectsData: ProjectsData = {
           name: "Tracy Lane"
         }
       ],
-      imageUrl: "/project/ThroughSpace.jpg",
+      imageUrl: "/projectpics/ThroughSpace.jpg",
       imageAlt: "FIVE, SIX THOUSAND TIMES Album Cover",
-      backgroundImage: "/project/tsatmixing.jpg",
+      backgroundImage: "/projectpics/tsatmixing.jpg",
       aspectRatio: "square",
       links: {
         spotify: "https://open.spotify.com/track/1HY1hr2tKtsyxvQqaONiSY?si=b6106aa5aa1f49d2",
@@ -90,9 +90,9 @@ export const projectsData: ProjectsData = {
           name: "Tracy Lane"
         }
       ],
-      imageUrl: "/project/greelycover.jpg",
+      imageUrl: "/projectpics/greelycover.jpg",
       imageAlt: "The Greely Horror Music Video",
-      backgroundImage: "/project/greely.jpg",
+      backgroundImage: "/projectpics/greely.jpg",
       aspectRatio: "landscape",
       links: {
         youtube: "https://www.youtube.com/watch?v=36tsnhlhg04"
@@ -113,9 +113,9 @@ export const projectsData: ProjectsData = {
           name: "Tracy Lane"
         }
       ],
-      imageUrl: "/project/Astromonkey.jpg",
+      imageUrl: "/projectpics/Astromonkey.jpg",
       imageAlt: "Astro Monkey Album Cover",
-      backgroundImage: "/project/astromonkeybg.jpg",
+      backgroundImage: "/projectpics/astromonkeybg.jpg",
       aspectRatio: "square",
       links: {
         spotify: "https://open.spotify.com/track/7kyg2fekqo4kzvjpdxvrf5si0b28684ffe0448ea",

@@ -42,7 +42,7 @@ interface Project {
   credits: [
     {
       role: "Director",
-      name: "Jane Doe"
+      name: "Peter Blaine"
     }
   ],
   imageUrl: "/projectpics/image.jpg",

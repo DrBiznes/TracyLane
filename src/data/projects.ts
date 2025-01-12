@@ -31,7 +31,7 @@ export const projectsData: ProjectsData = {
     {
       id: "on-the-line",
       title: "On The Line",
-      description: "Music Production & Creative Direction",
+      description: "Mixing & Creative Direction",
       body: "During a car ride back to his place, an old friend from high school showed me a song he was working on. I immediately knew I could make it sound great.  He gave me the opportunity, emailed his tracks, and let me know what he was expecting out of the mix. With just my laptop I made it into what it is today.",
       credits: [
         {
@@ -41,6 +41,10 @@ export const projectsData: ProjectsData = {
         {
           role: "Mixing",
           name: "Tracy Lane"
+        },
+        {
+          role: "Production",
+          name: "JustDan"
         }
       ],
       imageUrl: "/projectpics/OnTheLine.jpg",
@@ -95,7 +99,7 @@ export const projectsData: ProjectsData = {
       backgroundImage: "/projectpics/greely.jpg",
       aspectRatio: "landscape",
       links: {
-        youtube: "https://www.youtube.com/watch?v=36tsnhlhg04"
+        youtube: "https://www.youtube.com/watch?v=36tsNHlhG04"
       }
     },
     {

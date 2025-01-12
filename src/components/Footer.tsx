@@ -3,7 +3,11 @@ export const Footer = () => {
     <footer className="main-footer">
       <div className="footer-content">
         <div className="footer-left">
-          <p>© {new Date().getFullYear()} Tracy Lane</p>
+          <p>
+            <a href="https://github.com/DrBiznes/TracyLane?tab=License-1-ov-file" target="_blank" rel="noopener noreferrer">
+              © 2025 Tracy Lane
+            </a>
+          </p>
           <p className="footer-credit">
             Website by <a href="https://jamino.me" target="_blank" rel="noopener noreferrer">Jamino</a>
           </p>

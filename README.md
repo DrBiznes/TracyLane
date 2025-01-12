@@ -1,50 +1,68 @@
-# React + TypeScript + Vite
+# Tracy Lane Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimalist portfolio website I built for my friend Tracy Lane.
 
-Currently, two official plugins are available:
+🌐 [tracylane.work](https://tracylane.work)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Design & Tech
 
-## Expanding the ESLint configuration
+Built with React, TypeScript, and Vite. Uses Unbounded for headers and JetBrains Mono for body text. The site uses a dark theme with a deep space background (#0a0a0f), white text (#e0e0ff), and blue accents (#2b35ff).
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Adding Projects
 
-- Configure the top-level `parserOptions` property like this:
+Projects are configured in `src/data/projects.ts`. Each project follows this structure:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```typescript
+interface Project {
+  id: string;                   // URL-friendly identifier
+  title: string;                // Project title
+  description: string;          // Short description
+  body: string;                 // Full project description
+  credits?: Credit[];          // Optional array of credits
+  imageUrl: string;            // Main project image
+  imageAlt?: string;           // Image alt text
+  backgroundImage?: string;    // Optional hero background
+  aspectRatio: 'square' | 'portrait' | 'landscape';  // Image aspect ratio
+  links: {
+    youtube?: string;
+    spotify?: string;
+    appleMusic?: string;
+  };
+}
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Example Project:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```typescript
+{
+  id: "project-name",
+  title: "Project Title",
+  description: "Short Description",
+  body: "Full project description goes here...",
+  credits: [
+    {
+      role: "Director",
+      name: "Jane Doe"
+    }
+  ],
+  imageUrl: "/projectpics/image.jpg",
+  imageAlt: "Project Image",
+  backgroundImage: "/projectpics/background.jpg",
+  aspectRatio: "landscape",
+  links: {
+    youtube: "https://youtube.com/..."
+  }
+}
 ```
+
+Add project images to the `public/projectpics/` directory and reference them in the project configuration.
+
+## License
+
+- Website code: MIT License
+- Content and media: © 2025 Tracy Lane
+
+## Credits
+
+- Built by [Jamino](https://jamino.me)
+- Content © Tracy Lane

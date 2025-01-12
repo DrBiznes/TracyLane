@@ -17,17 +17,22 @@ import { projectsData } from './data/projects';
 function AppContent() {
   const location = useLocation();
   const [currentBackground, setCurrentBackground] = useState<string>(backgroundImage);
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
 
   useEffect(() => {
     const background = document.querySelector('.background') as HTMLElement;
     if (background) {
-      background.classList.add('transitioning');
+      // Skip transition class on initial load of home page
+      if (!(isInitialLoad && location.pathname === '/')) {
+        background.classList.add('transitioning');
+      }
 
       // Check if we're on a project page
       const projectId = location.pathname.match(/\/project\/([^/]+)/)?.[1];
       const project = projectId ? projectsData.projects.find(p => p.id === projectId) : null;
 
-      // Wait for fade out
+      // Wait for fade out (skip delay on initial load)
+      const timeoutDuration = isInitialLoad && location.pathname === '/' ? 0 : 800;
       setTimeout(() => {
         let newBackground = backgroundImage;
         
@@ -48,7 +53,12 @@ function AppContent() {
         
         // Remove transitioning class to fade in
         background.classList.remove('transitioning');
-      }, 800);
+        
+        // Set isInitialLoad to false after first load
+        if (isInitialLoad) {
+          setIsInitialLoad(false);
+        }
+      }, timeoutDuration);
     }
   }, [location.pathname]);
 

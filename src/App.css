@@ -811,3 +811,15 @@ html {
 .menu-button.open .material-icons {
   transform: rotate(0deg);
 }
+
+.footer-left p a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  opacity: 0.8;
+}
+
+.footer-left p a:hover {
+  opacity: 1;
+  filter: drop-shadow(0 0 1em #646cff77);
+}

@@ -70,7 +70,7 @@ export const About = () => {
             <h2>Contact</h2>
             <div className="contact-links">
               <motion.a 
-                href="mailto:Tjlane2301@gmail.com" 
+                href="mailto:contact@tracylane.work" 
                 className="contact-link"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

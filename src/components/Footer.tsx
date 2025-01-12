@@ -9,7 +9,7 @@ export const Footer = () => {
           </p>
         </div>
         <div className="footer-right">
-          <a href="mailto:contact@tracylane.com">contact@tracylane.com</a>
+          <a href="mailto:contact@tracylane.work">contact@tracylane.work</a>
           <div className="social-links">
             <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
             <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>

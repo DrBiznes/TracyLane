@@ -738,6 +738,7 @@ html {
   
   .next-project-button {
     margin-top: 1rem;
+    padding-left: 0;
   }
 }
 

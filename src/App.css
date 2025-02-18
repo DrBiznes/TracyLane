@@ -95,6 +95,7 @@
   padding: 5rem 2rem 2rem;
   position: relative;
   gap: 0.5rem;
+  color: orange;
 }
 
 .hero:hover .hero-title {
@@ -563,6 +564,7 @@ main {
   cursor: pointer;
   padding: 0;
   text-align: left;
+  color: orange;
 }
 
 .menu-item:hover {

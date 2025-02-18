@@ -4,7 +4,7 @@
   /* Colors extracted from the forest image */
   --color-bg: #0a0a0f;
   --color-primary: #e0e0ff;
-  --color-accent: #2b35ff;
+  --color-accent: #ff442b;
   --color-secondary: #1a1a2a;
   --color-overlay: rgba(10, 10, 15, 0.85);
 
@@ -39,6 +39,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 4rem;
+  color: orange;
 }
 
 /* Improve text rendering */
@@ -147,6 +148,7 @@ a, button {
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  color: orange;
 }
 
 .menu-projects-title {
@@ -170,6 +172,7 @@ a, button {
   border-radius: 4px;
   padding: 2rem;
   transition: all 0.3s ease;
+  color: orange;
 }
 
 .menu-project-item:hover {

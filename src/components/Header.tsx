@@ -15,8 +15,11 @@ export const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Only apply the scrolled class if the menu is closed
+  const headerClass = `main-header ${isScrolled && !isOpen ? 'scrolled' : ''} ${isOpen ? 'menu-open' : ''}`;
+
   return (
-    <header className={`main-header ${isScrolled ? 'scrolled' : ''}`}>
+    <header className={headerClass}>
       <div className="header-left">
         <Link to="/" className="logo">TL</Link>
       </div>
@@ -32,4 +35,4 @@ export const Header = () => {
       </div>
     </header>
   );
-}; 
+};

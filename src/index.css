@@ -39,7 +39,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 4rem;
-  color: orange;
+  color: #ffdf00;
 }
 
 /* Improve text rendering */
@@ -148,7 +148,7 @@ a, button {
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  color: orange;
+  color: #ffdf00;
 }
 
 .menu-projects-title {
@@ -172,7 +172,7 @@ a, button {
   border-radius: 4px;
   padding: 2rem;
   transition: all 0.3s ease;
-  color: orange;
+  color: #ffdf00;
 }
 
 .menu-project-item:hover {

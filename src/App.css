@@ -95,15 +95,15 @@
   padding: 5rem 2rem 2rem;
   position: relative;
   gap: 0.5rem;
-  color: orange;
+  color: #ffdf00;
 }
 
 .hero:hover .hero-title {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #6a5aff); /* Slightly different purple shade */
 }
 
 .hero:hover .hero-subtitle {
-  filter: drop-shadow(0 0 1em #646cff77);
+  filter: drop-shadow(0 0 1em #7764ffaa); /* Lighter purple with transparency */
 }
 
 .hero h1 {
@@ -255,7 +255,7 @@
 }
 
 .project-container:hover .project-content h2 {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #6a5fffaa);
 }
 
 .project-content h2 {
@@ -344,6 +344,19 @@
 .main-header.scrolled {
   background-color: #0b0a0f;
   backdrop-filter: blur(10px);
+}
+
+.main-header.menu-open {
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+/* Ensure the header elements remain visible */
+.main-header.menu-open .logo,
+.main-header.menu-open .menu-button {
+  position: relative;
+  z-index: 202; /* Higher than the menu overlay z-index */
 }
 
 .header-left .logo {
@@ -564,11 +577,11 @@ main {
   cursor: pointer;
   padding: 0;
   text-align: left;
-  color: orange;
+  color: #ffdf00;
 }
 
 .menu-item:hover {
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 @media (max-width: 768px) {
@@ -613,7 +626,7 @@ main {
 }
 
 .hero-title:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #6a5aff);
 }
 
 html {

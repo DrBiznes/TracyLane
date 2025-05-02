@@ -125,7 +125,7 @@ export const About = () => {
                   skills: [
                     { icon: 'piano', text: 'FL Studio' },
                     { icon: 'description', text: 'Google Docs & Office' },
-                    { icon: 'theater_comedy', text: 'Acting' }
+                    { icon: 'theater_comedy', text: 'Presenting' }
                   ]
                 },
                 {

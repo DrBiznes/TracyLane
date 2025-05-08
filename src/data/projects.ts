@@ -125,6 +125,30 @@ export const projectsData: ProjectsData = {
         spotify: "https://open.spotify.com/track/7kyg2fekqo4kzvjpdxvrf5si0b28684ffe0448ea",
         appleMusic: "https://music.apple.com/us/album/astro-monkey/1618641040?i=1618641041"
       }
+    },
+    {
+      id: "jamiee-film",
+      title: "JaimeE Short Film",
+      description: "Soundtrack & Sound Design",
+      body: "One day at work during the covid season, I brought my laptop with me and started producing some instrumental tracks. I made one of my first attempts at a synthwave beat. The project was then sitting on my laptop for months collecting dust. In spring of 2022 I showed a friend of mine what I had made, and he wrote some lyrics for it on the spot. A couple more friends contributed vocals and it became one of our proudest creations. Entirely mixed in my own bedroom, we created a song about the beauty of space and peace of mind. Once you are floating amongst the stars, you may never want to go back.",
+      credits: [
+        {
+          role: "Artist",
+          name: "The Rage Crusade"
+        },
+        {
+          role: "Production & Mixing",
+          name: "Tracy Lane"
+        }
+      ],
+      imageUrl: "/projectpics/Astromonkey.jpg",
+      imageAlt: "Astro Monkey Album Cover",
+      backgroundImage: "/projectpics/astromonkeybg.jpg",
+      aspectRatio: "square",
+      links: {
+        spotify: "https://open.spotify.com/track/7kyg2fekqo4kzvjpdxvrf5si0b28684ffe0448ea",
+        appleMusic: "https://music.apple.com/us/album/astro-monkey/1618641040?i=1618641041"
+      }
     }
   ]
 };

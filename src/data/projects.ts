@@ -7,6 +7,7 @@ export interface ProjectLinks {
   youtube?: string;
   spotify?: string;
   appleMusic?: string;
+  googleDocs?: string;
 }
 
 export interface Project {
@@ -130,24 +131,43 @@ export const projectsData: ProjectsData = {
       id: "jamiee-film",
       title: "JaimeE Short Film",
       description: "Soundtrack & Sound Design",
-      body: "One day at work during the covid season, I brought my laptop with me and started producing some instrumental tracks. I made one of my first attempts at a synthwave beat. The project was then sitting on my laptop for months collecting dust. In spring of 2022 I showed a friend of mine what I had made, and he wrote some lyrics for it on the spot. A couple more friends contributed vocals and it became one of our proudest creations. Entirely mixed in my own bedroom, we created a song about the beauty of space and peace of mind. Once you are floating amongst the stars, you may never want to go back.",
+      body: "After a traumatic night, Angie leans on their passive replacement, Jamie to avoid questions about that night from their roommates.",
       credits: [
         {
-          role: "Artist",
-          name: "The Rage Crusade"
+          role: "Writer & Director",
+          name: "Charliee Hines"
         },
         {
-          role: "Production & Mixing",
+          role: "Soundtrack & Mixing",
           name: "Tracy Lane"
         }
       ],
-      imageUrl: "/projectpics/Astromonkey.jpg",
-      imageAlt: "Astro Monkey Album Cover",
-      backgroundImage: "/projectpics/astromonkeybg.jpg",
+      imageUrl: "/projectpics/jamiee.jpg",
+      imageAlt: "JamiE Short Film",
+      backgroundImage: "/projectpics/jamieebg.png",
       aspectRatio: "square",
       links: {
-        spotify: "https://open.spotify.com/track/7kyg2fekqo4kzvjpdxvrf5si0b28684ffe0448ea",
-        appleMusic: "https://music.apple.com/us/album/astro-monkey/1618641040?i=1618641041"
+        spotify: "https://open.spotify.com/album/6qP7dlHAUuCC3MSL1oE9if?si=6q55v3MiQ_ulgRflfsoofw",
+        youtube: "https://www.youtube.com/watch?v=5Dk6o-wAQEI"
+      }
+    },
+    {
+      id: "pizza",
+      title: "Pizza Schmizza Marketing Campaign & Presentation",
+      description: "Mock Advertisement Pitch",
+      body: "As part of my advertising studies, I worked on an advertisement pitch for a real world client - Pizza Schmizza. This was done in collaboration with Olivia Koeberle, Bella Lyon, and Caitlin Ingersoll. The strategy was to advertise Schmizza as a cleaner and more dine-in restaurant experience.  ",
+      credits: [
+        {
+          role: "Marketing",
+          name: "Tracy Lane"
+        }
+      ],
+      imageUrl: "/projectpics/pizza.jpg",
+      imageAlt: "Pizza Presentation",
+      backgroundImage: "/projectpics/ghostbg.jpg",
+      aspectRatio: "landscape",
+      links: {
+        googleDocs: "https://www.tracylane.work/SchmizzaSlides.pdf"
       }
     }
   ]

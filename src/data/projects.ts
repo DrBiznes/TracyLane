@@ -161,7 +161,7 @@ export const projectsData: ProjectsData = {
           name: "Tracy Lane"
         }
       ],
-      imageUrl: "/projectpics/Astromonkey.jpg",
+      imageUrl: "/projectpics/astromonkey.png",
       imageAlt: "Astro Monkey Album Cover",
       backgroundImage: "/projectpics/astromonkeybg.jpg",
       aspectRatio: "square",

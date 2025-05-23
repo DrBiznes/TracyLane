@@ -30,6 +30,49 @@ export interface ProjectsData {
 export const projectsData: ProjectsData = {
   projects: [
     {
+      id: "jamiee-film",
+      title: "JaimeE Short Film",
+      description: "Soundtrack & Sound Design",
+      body: "After a traumatic night, Angie leans on their passive replacement, Jamie to avoid questions about that night from their roommates.",
+      credits: [
+        {
+          role: "Writer & Director",
+          name: "Charliee Hines"
+        },
+        {
+          role: "Soundtrack & Mixing",
+          name: "Tracy Lane"
+        }
+      ],
+      imageUrl: "/projectpics/jamiee.jpg",
+      imageAlt: "JamiE Short Film",
+      backgroundImage: "/projectpics/jamieebg.png",
+      aspectRatio: "square",
+      links: {
+        spotify: "https://open.spotify.com/album/6qP7dlHAUuCC3MSL1oE9if?si=6q55v3MiQ_ulgRflfsoofw",
+        youtube: "https://www.youtube.com/watch?v=5Dk6o-wAQEI"
+      }
+    },
+    {
+      id: "pizza",
+      title: "Pizza Schmizza Marketing Campaign & Presentation",
+      description: "Mock Advertisement Pitch",
+      body: "As part of my advertising studies, I worked on an advertisement pitch for a real world client - Pizza Schmizza. This was done in collaboration with Olivia Koeberle, Bella Lyon, and Caitlin Ingersoll. The strategy was to advertise Schmizza as a cleaner and more dine-in restaurant experience.  ",
+      credits: [
+        {
+          role: "Marketing",
+          name: "Tracy Lane"
+        }
+      ],
+      imageUrl: "/projectpics/pizza.jpg",
+      imageAlt: "Pizza Presentation",
+      backgroundImage: "/projectpics/pizzabg.jpg",
+      aspectRatio: "landscape",
+      links: {
+        googleDocs: "https://www.canva.com/design/DAGc2wSpCLg/q5LEtvzsUvPjVSsKF41ryQ/edit?utm_content=DAGc2wSpCLg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+      }
+    },
+    {
       id: "on-the-line",
       title: "On The Line",
       description: "Mixing & Creative Direction",
@@ -125,49 +168,6 @@ export const projectsData: ProjectsData = {
       links: {
         spotify: "https://open.spotify.com/track/7kyg2fekqo4kzvjpdxvrf5si0b28684ffe0448ea",
         appleMusic: "https://music.apple.com/us/album/astro-monkey/1618641040?i=1618641041"
-      }
-    },
-    {
-      id: "jamiee-film",
-      title: "JaimeE Short Film",
-      description: "Soundtrack & Sound Design",
-      body: "After a traumatic night, Angie leans on their passive replacement, Jamie to avoid questions about that night from their roommates.",
-      credits: [
-        {
-          role: "Writer & Director",
-          name: "Charliee Hines"
-        },
-        {
-          role: "Soundtrack & Mixing",
-          name: "Tracy Lane"
-        }
-      ],
-      imageUrl: "/projectpics/jamiee.jpg",
-      imageAlt: "JamiE Short Film",
-      backgroundImage: "/projectpics/jamieebg.png",
-      aspectRatio: "square",
-      links: {
-        spotify: "https://open.spotify.com/album/6qP7dlHAUuCC3MSL1oE9if?si=6q55v3MiQ_ulgRflfsoofw",
-        youtube: "https://www.youtube.com/watch?v=5Dk6o-wAQEI"
-      }
-    },
-    {
-      id: "pizza",
-      title: "Pizza Schmizza Marketing Campaign & Presentation",
-      description: "Mock Advertisement Pitch",
-      body: "As part of my advertising studies, I worked on an advertisement pitch for a real world client - Pizza Schmizza. This was done in collaboration with Olivia Koeberle, Bella Lyon, and Caitlin Ingersoll. The strategy was to advertise Schmizza as a cleaner and more dine-in restaurant experience.  ",
-      credits: [
-        {
-          role: "Marketing",
-          name: "Tracy Lane"
-        }
-      ],
-      imageUrl: "/projectpics/pizza.jpg",
-      imageAlt: "Pizza Presentation",
-      backgroundImage: "/projectpics/pizzabg.jpg",
-      aspectRatio: "landscape",
-      links: {
-        googleDocs: "https://www.canva.com/design/DAGc2wSpCLg/q5LEtvzsUvPjVSsKF41ryQ/edit?utm_content=DAGc2wSpCLg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     }
   ]

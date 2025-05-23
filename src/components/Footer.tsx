@@ -15,7 +15,6 @@ export const Footer = () => {
         <div className="footer-right">
           <a href="mailto:contact@tracylane.work">contact@tracylane.work</a>
           <div className="social-links">
-            <a href="https://www.instagram.com/the_mr.lane" target="_blank" rel="noopener noreferrer">Instagram</a>
             <a href="https://www.linkedin.com/in/tracy-lane-441741256/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
         </div>

@@ -167,7 +167,7 @@ export const projectsData: ProjectsData = {
       backgroundImage: "/projectpics/pizzabg.jpg",
       aspectRatio: "landscape",
       links: {
-        googleDocs: "https://www.tracylane.work/SchmizzaSlides.pdf"
+        googleDocs: "https://www.canva.com/design/DAGc2wSpCLg/q5LEtvzsUvPjVSsKF41ryQ/edit?utm_content=DAGc2wSpCLg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       }
     }
   ]

@@ -164,7 +164,7 @@ export const projectsData: ProjectsData = {
       ],
       imageUrl: "/projectpics/pizza.jpg",
       imageAlt: "Pizza Presentation",
-      backgroundImage: "/projectpics/ghostbg.jpg",
+      backgroundImage: "/projectpics/pizzabg.jpg",
       aspectRatio: "landscape",
       links: {
         googleDocs: "https://www.tracylane.work/SchmizzaSlides.pdf"
